@@ -12,22 +12,30 @@ class ReviewSpider(scrapy.Spider):
             # TODO: find imdb id for movie
             #       construct the reviews url
             #       follow it, while passing the movie title as a kwarg
-            id = None
-            url = None
-            movie_title = None
+            url = row.css("td.titleColumn a::attr(href)").get() + "reviews"
             yield response.follow(
-                url, callback=parse_review_page,
-                movie_title=movie_title,
+                url, 
+                callback=self.parse_review_page,
             )
     
-    def parse_review_page(self, response, movie_title):
-        for review in response.css("TODO"):
-            # TODO: extract the info
+    def parse_review_page(self, response):
+        movie_title = response.css("div.subpage_title_block h3 a::text").get()
+        for review in response.css("div.imdb-user-review"):
+            try:
+                review_content = (
+                    review
+                    .css("div.content div.text")
+                    .re("<div .+?>(.+)</div>")
+                    [0]
+                    .replace("<br>", " ")
+                )
+            except IndexError:
+                continue
             yield { 
                 "movie_title": movie_title,
-                "rating":None,
-                "title": None,
-                "user": None,
-                "date": None,
-                "content": None,
+                "rating": review.css("span.rating-other-user-rating span::text").get(),
+                "title": review.css("a.title::text").get(),
+                "user": review.css("span.display-name-link a::text").get(),
+                "date": review.css("span.review-date::text").get(),
+                "content": review_content,
             }

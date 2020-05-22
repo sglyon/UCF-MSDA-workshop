@@ -4,6 +4,7 @@ import scrapy
 class QuotesSpider(scrapy.Spider):
     # name for spider -- important in larger projects
     name = 'quotes'
+    
     # all urls for which scrapy should initiate this spider
     start_urls = [
         'http://quotes.toscrape.com/tag/humor/',
@@ -20,6 +21,7 @@ class QuotesSpider(scrapy.Spider):
                 # ... and that inside that div we have `span` with `.text`?
                 'text': quote.css('span.text::text').get(),
                 'author': quote.xpath('span/small/text()').get(),
+#                 'author': quote.css('small.author::text').get(),
             }
         
         # at the bottom of the page there's a list item with class
