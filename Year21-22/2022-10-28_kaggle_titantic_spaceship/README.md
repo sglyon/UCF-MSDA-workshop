@@ -4,6 +4,12 @@ Here I will put the code I used/generated for the 2022-10-28 session on the Kagg
 
 I will also include some instructions that you should be able to replicate on your own computer to get started
 
+## Shortcut: Google colab
+
+Go here: https://colab.research.google.com/github/sglyon/UCF-MSDA-workshop/blob/master/Year21-22/2022-10-28_kaggle_titantic_spaceship/testing.ipynb
+
+Replace the to "TODO" strings in the first code cell with the username and password we gave you during class
+
 ## Instructions
 
 1. Sign up for an account at https://kaggle.com
@@ -19,7 +25,6 @@ I will also include some instructions that you should be able to replicate on yo
 11. Fill in the `.env` contents with what was sent out via an announcement on webcourses
 
 After this you should be ready to go!
-
 
 ## Alternate instructions if you run Jupyter notebook
 
