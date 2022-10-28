@@ -11,7 +11,7 @@ I will also include some instructions that you should be able to replicate on yo
 3. On the account page, select "Create API Token" -- this will download a file `kaggle.json`
 4. Move `kaggle.json` to `~/.kaggle/kaggle.json`
 5. Install conda or mamba. (instructions here if you haven't started yet: https://mamba.readthedocs.io/en/latest/installation.html)
-6. Create a new conda environment using the command `mamba create -n ucf-kaggle-titanic-spaceship -c conda-forge python=3 pandas matplotlib seaborn plotly scikit-learn kaggle ipython mlflow dotenv ipykernel` (use `conda` instead of `mamba` if you don't have mamba)
+6. Create a new conda environment using the command `mamba create -n ucf-kaggle-titanic-spaceship -c conda-forge python=3 pandas matplotlib seaborn plotly scikit-learn kaggle ipython mlflow python-dotenv ipykernel` (use `conda` instead of `mamba` if you don't have mamba)
 7. Activate the environment `conda activate ucf-kaggle-titanic-spaceship`
 8. Download data from kaggle with `kaggle competitions download -c spaceship-titanic`
 9. Unzip the data (on linux or MacOS use `unzip spaceship-titanic.zip` -- not sure on windows... probably click something)
