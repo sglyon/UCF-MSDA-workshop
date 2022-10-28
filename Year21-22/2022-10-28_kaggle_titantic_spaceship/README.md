@@ -19,3 +19,14 @@ I will also include some instructions that you should be able to replicate on yo
 11. Fill in the `.env` contents with what was sent out via an announcement on webcourses
 
 After this you should be ready to go!
+
+
+## Alternate instructions if you run Jupyter notebook
+
+1. Download this repository
+2. Start jupyter
+3. Go to this folder ("Year21-22/2022-10-28_kaggle_titantic_spaceship")
+4. In top right of Jupyter notebook click "New" Then select "Text file"
+5. Rename the file to `.env` (click the "untitled.txt" and change it to ".env")
+6. Paste in contents of .env sent in zoom chat and save the file
+7. Open testing.ipynb and run all the cells!
